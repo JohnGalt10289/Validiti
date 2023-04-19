@@ -9,7 +9,7 @@
   <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="idm.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" media="screen and (orientation: portrait)">
 </head>
 <script src="https://hammerjs.github.io/dist/hammer.js"></script>
@@ -32,7 +32,7 @@ window.onload = function () {
     </div>
   </div>
 </div>
-<div  id="myElement">
+
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container" id="home" style="height: 100vh;">
   <div class="w3-display-middle" style="white-space:nowrap;">
@@ -44,11 +44,16 @@ window.onload = function () {
 
 <div>
   <p id="keys"></p>
+
 </div>
 <div  style="box-shadow: 5px 5px 2px rgb(255, 255, 255, 0.5); border: 10px; border-radius: 5px; background-color: rgba(197, 197, 197, 0.8);margin-left: 50%; transform: translate(-50%, -50%); width: 250px; margin-top: -30vh; padding: 5px; text-align: center;">
   <h3 class="w3-opacity"><b>Let's change the world! </b></h3>
   <p><a id="clicks">0</a></p>
-
+  <script>
+    let clicks = 0.0;  
+ let potentialclicks = Math.trunc(clicks);
+  document.getElementById("clicks").innerHTML = potentialclicks;
+  </script>
 </div>
 <div>
   <button  style="box-shadow: 5px 5px 2px rgb(255, 255, 255, 0.5); border: 10px; border-radius: 5px; background-color: rgba(197, 197, 197, 0.8);margin-left: 50%; transform: translate(-50%, -50%); width: 250px; margin-top: -30vh; padding: 5px; text-align: center;" onClick="window.location.reload();">Reload Key Counter </button>
@@ -59,13 +64,10 @@ window.onload = function () {
 </div>
 
 
-</div>
+
 </body>
 <script>
- var clicks = Math.round(0);  
- var potentialclicks;
- potentialclicks = Math.round(clicks);
-  document.getElementById("clicks").innerHTML = potentialclicks;
+ 
 
   
 var myElement = document.getElementById('myElement');
