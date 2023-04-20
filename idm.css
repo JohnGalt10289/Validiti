@@ -1,6 +1,10 @@
 body {
-    max-height: 100vh;
-}
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+  html {
+    height: -webkit-fill-available;
+  }
 .bgimg-1 {
     background-image: url('/assets/img/pexels-taryn-elliott-4840134.jpg');
     height: 100vh;
