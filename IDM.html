@@ -16,6 +16,14 @@
 <script>
 window.onload = function () {
   document.getElementById('id01').style.display='block';
+  var count =0;
+    document.getElementById("clicks").addEventListener("panleft", function(ev) {
+        
+      count++;
+      if(count === 50) {
+        document.getElementById("avatar").innerHTML = clicks;
+      }
+  });
 };
 </script>
   <div class="w3-container">
@@ -50,17 +58,13 @@ window.onload = function () {
   <p id="keys"></p>
 
 </div>
-<div  style="margin-top: 60vh; margin-bottom: 5vh; box-shadow: 5px 5px 2px rgb(255, 255, 255, 0.5); border: 5px; border-radius: 5px; background-color: rgba(197, 197, 197, 0.8);margin-left: 50%; transform: translate(-50%, -50%); width: 80vw; padding: 5px; text-align: center;">
+<div  style="margin-top: 60vh; margin-bottom: 5vh; box-shadow: 5px 5px 2px rgb(255, 255, 255, 0.25); border: 5px; border-radius: 5px; background-color: rgba(197, 197, 197, 0.8);margin-left: 50%; transform: translate(-50%, -50%); width: 80vw; padding: 5px; text-align: center;">
   <h4 class="w3-opacity"><b>Swipe around and generate keys </b></h4>
+  <p><a id="avatar">Building Signature... </a></p>
   <p><a id="clicks">0</a></p>
-  <script>
-    let clicks = 0;  
-    let potentialclicks = clicks;
-    document.getElementById("clicks").innerHTML = potentialclicks;
-  </script>
 </div>
 <div>
-  <button  style="box-shadow: 5px 5px 2px rgb(255, 255, 255, 0.5); border: 5px; border-radius: 5px; background-color: rgba(197, 197, 197, 0.8);margin-left: 50%; transform: translate(-50%, -50%); width: 50vw; padding: 5px; text-align: center;" onClick="window.location.reload();">Reload Key Counter </button>
+  <button  style="box-shadow: .5px 5px 2px rgb(255, 255, 255, 0.25); border: 5px; border-radius: 5px; background-color: rgba(197, 197, 197, 0.8);margin-left: 50%; transform: translate(-50%, -50%); width: 50vw; padding: 5px; text-align: center;" onClick="window.location.reload();">Reload Key Counter </button>
 </div>
 
 <div class="w3-container">
@@ -68,11 +72,16 @@ window.onload = function () {
 </div>
 
 
-
 </body>
-<script>
- 
 
+
+<script>
+
+    let clicks = 0;  
+    document.getElementById("clicks").innerHTML = clicks;
+    if(clicks >= 500000) {
+        document.getElementById("avatar").innerHTML = "Signature Recorded!";
+      }
   
 var myElement = document.getElementById('myElement');
 
@@ -91,13 +100,19 @@ mc.on("panleft", function(ev) {
     console.log((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62);
     clicks += clicks;
     document.getElementById("clicks").innerHTML = clicks;
+    if(clicks >= 500000) {
+        document.getElementById("avatar").innerHTML = "Signature Recorded!";
+      }
 });
 mc.on("panright", function(ev) {
     //myElement.textContent = ev.type +" gesture detected.";
     console.log(ev.type +" gesture detected.");
-    console.log((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62);
+    console.log((62518275482134798324715983274159817234598137245918327491832745)*256);
     clicks += clicks;
     document.getElementById("clicks").innerHTML = clicks;
+    if(clicks >= 500000) {
+        document.getElementById("avatar").innerHTML = "Signature Recorded!";
+      }
   });
 mc.on("panup", function(ev) {
     //myElement.textContent = ev.type +" gesture detected.";
@@ -105,6 +120,9 @@ mc.on("panup", function(ev) {
     console.log(((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62)*256);
     clicks += clicks;
     document.getElementById("clicks").innerHTML = clicks;
+    if(clicks >= 500000) {
+        document.getElementById("avatar").innerHTML = "Signature Recorded!";
+      }
 });
 mc.on("pandown", function(ev) {
     //myElement.textContent = ev.type +" gesture detected.";
@@ -112,6 +130,9 @@ mc.on("pandown", function(ev) {
     console.log(((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62)*256);
     clicks += clicks;
     document.getElementById("clicks").innerHTML = clicks;
+    if(clicks >= 500000) {
+        document.getElementById("avatar").innerHTML = "Signature Recorded!";
+      }
 });
 mc.on("tap", function(ev) {
     //myElement.textContent = ev.type +" gesture detected.";
@@ -119,11 +140,17 @@ mc.on("tap", function(ev) {
     console.log(((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62)*256);
     clicks += clicks;
     document.getElementById("clicks").innerHTML = clicks;
+    if(clicks >= 500000) {
+        document.getElementById("avatar").innerHTML = "Signature Recorded!";
+      }
 });
 mc.on("press", function(ev) {
     //myElement.textContent = ev.type +" gesture detected.";
     console.log(ev.type +" gesture detected.");});
     Math.round((clicks += 62)*256);
+    if(clicks >= 500000) {
+        document.getElementById("avatar").innerHTML = "Signature Recorded!";
+      }
 </script>
 
 </html>
