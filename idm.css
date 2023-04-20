@@ -1,11 +1,6 @@
 body {
     min-height: -webkit-fill-available;
     min-height: 100vh;
-  }
-  html {
-    height: -webkit-fill-available;
-  }
-.bgimg-1 {
     background-image: url('/assets/img/pexels-taryn-elliott-4840134.jpg');
     
           -webkit-animation: slidein 300s;
@@ -18,8 +13,12 @@ body {
           animation-iteration-count: infinite;
   
           -webkit-animation-direction: alternate;
-          animation-direction: alternate;              
+          animation-direction: alternate;     
   }
+  html {
+    height: -webkit-fill-available;
+  }
+
   @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
   @-webkit-keyframes slidein {
   from {background-position: top; background-size:3000px; }
