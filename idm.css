@@ -7,7 +7,7 @@ body {
   }
 .bgimg-1 {
     background-image: url('/assets/img/pexels-taryn-elliott-4840134.jpg');
-    height: 100vh;
+    min-height: 100vh;
           -webkit-animation: slidein 300s;
           animation: slidein 300s;
   

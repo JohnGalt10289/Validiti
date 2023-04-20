@@ -36,7 +36,7 @@ window.onload = function () {
 </div>
 
 <!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container" id="home" style="height: 100vh;">
+<div class="bgimg-1 w3-display-container" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
         <span class="w3-center"><h1 style="margin-bottom: 60px; margin-top: -40vh;text-shadow: 4px 4px 8px rgb(175, 184, 190); color: aliceblue; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 60px;">Validiti</h1></span>
 
@@ -86,42 +86,42 @@ mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 mc.on("panleft", function(ev) {
     //myElement.textContent = ev.type +" gesture detected.";
     console.log(ev.type +" gesture detected.");
-    console.log((ev.srcEvent.offsetX - ev.srcEvent.offsetY)*62);
+    console.log((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62);
     clicks += clicks;
     document.getElementById("clicks").innerHTML = clicks;
 });
 mc.on("panright", function(ev) {
     //myElement.textContent = ev.type +" gesture detected.";
     console.log(ev.type +" gesture detected.");
-    console.log((ev.srcEvent.offsetX + ev.srcEvent.offsetY)*62);
+    console.log((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62);
     clicks += clicks;
     document.getElementById("clicks").innerHTML = clicks;
   });
 mc.on("panup", function(ev) {
     //myElement.textContent = ev.type +" gesture detected.";
     console.log(ev.type +" gesture detected.");
-    console.log((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62);
+    console.log(((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62)*256);
     clicks += clicks;
     document.getElementById("clicks").innerHTML = clicks;
 });
 mc.on("pandown", function(ev) {
     //myElement.textContent = ev.type +" gesture detected.";
     console.log(ev.type +" gesture detected.");
-    console.log((ev.srcEvent.offsetX / ev.srcEvent.offsetY)*62);
+    console.log(((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62)*256);
     clicks += clicks;
     document.getElementById("clicks").innerHTML = clicks;
 });
 mc.on("tap", function(ev) {
     //myElement.textContent = ev.type +" gesture detected.";
     console.log(ev.type +" gesture detected.");
-    console.log((ev.srcEvent.offsetX = ev.srcEvent.offsetY)*62);
+    console.log(((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62)*256);
     clicks += clicks;
     document.getElementById("clicks").innerHTML = clicks;
 });
 mc.on("press", function(ev) {
     //myElement.textContent = ev.type +" gesture detected.";
     console.log(ev.type +" gesture detected.");});
-    Math.round(clicks += 62);
+    Math.round((clicks += 62)*256);
 </script>
 
 </html>
