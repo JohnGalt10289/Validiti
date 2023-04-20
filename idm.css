@@ -1,4 +1,6 @@
-
+body {
+    max-height: 100vh;
+}
 .bgimg-1 {
     background-image: url('/assets/img/pexels-taryn-elliott-4840134.jpg');
     height: 100vh;
