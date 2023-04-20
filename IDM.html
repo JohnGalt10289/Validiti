@@ -134,16 +134,7 @@ mc.on("pandown", function(ev) {
         document.getElementById("avatar").innerHTML = "Signature Recorded!";
       }
 });
-mc.on("tap", function(ev) {
-    //myElement.textContent = ev.type +" gesture detected.";
-    console.log(ev.type +" gesture detected.");
-    console.log(((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62)*256);
-    clicks += clicks;
-    document.getElementById("clicks").innerHTML = clicks;
-    if(clicks >= 500000) {
-        document.getElementById("avatar").innerHTML = "Signature Recorded!";
-      }
-});
+
 mc.on("press", function(ev) {
     //myElement.textContent = ev.type +" gesture detected.";
     console.log(ev.type +" gesture detected.");});
