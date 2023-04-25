@@ -13,7 +13,8 @@ body {
           animation-iteration-count: infinite;
   
           -webkit-animation-direction: alternate;
-          animation-direction: alternate;     
+          animation-direction: alternate;  
+          font-family: "Lato", sans-serif;  
   }
   html {
     height: -webkit-fill-available;
@@ -59,9 +60,3 @@ body {
 .w3-hover-opacity {cursor: pointer;}
 
 /* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-    min-height: 400px;
-  }
-}
