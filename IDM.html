@@ -140,6 +140,12 @@ mc.on("press", function(ev) {
     if(clicks >= 500000) {
         document.getElementById("avatar").innerHTML = "Signature Recorded!";
       }
+
+reset("signature", function() {
+    console.log(ev.type);
+})
+
+
 </script>
 
 </html>
