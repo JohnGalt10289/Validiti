@@ -42,23 +42,17 @@ window.onload = function () {
     </div>
   </div>
 </div>
-<body id="myElement">
-
-
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-        <span class="w3-center"><h1 style="text-shadow: 4px 4px 8px rgb(175, 184, 190); color: aliceblue; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 80px; margin-top: 600px;">Validiti</h1></span>
-
-    <span class="w3-center"><img src="/assets/img/validitilogo.png" alt="" style="margin-left: 50%; transform: translate(-50%, -50%); width: 300px; margin-top: 150px"></span>
-  </div>
+<div style="background-color: grey ;">
+  <span class="w3-center"><h1 style="text-shadow: 4px 4px 8px rgb(175, 184, 190); color: aliceblue; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 80px;">Validiti</h1></span>
 </div>
-
+<body id="myElement">
+<div class="bgimg-1 w3-display-container" id="home" >
+    <span class="w3-center"><img src="/assets/img/validitilogo.png" alt="" style="margin-left: 50%; transform: translate(-50%, -50%); width: 300px; margin-top: 200px"></span>
+</div>
 <div>
   <p id="keys"></p>
-
 </div>
-<div  style="margin-top: 65vh; box-shadow: 5px 5px 2px rgb(255, 255, 255, 0.25); border: 5px; border-radius: 5px; background-color: rgba(197, 197, 197, 0.8);margin-left: 50%; transform: translate(-50%, -50%); width: 300px; text-align: center;">
+<div  style="margin-top: 10px; box-shadow: 5px 5px 2px rgb(255, 255, 255, 0.25); border: 5px; border-radius: 5px; background-color: rgba(197, 197, 197, 0.8);margin-left: 50%; transform: translate(-50%, -50%); width: 300px; text-align: center;">
   <h4 class="w3-opacity"><b>Swipe around and generate keys </b></h4>
   <p><a id="avatar">Building Signature... </a></p>
   <p><a id="clicks">0</a></p>
@@ -66,86 +60,29 @@ window.onload = function () {
 <div style="margin-top: -20px;">
   <button  style="box-shadow: .5px 5px 2px rgb(255, 255, 255, 0.25); border: 5px; border-radius: 5px; background-color: rgba(197, 197, 197, 0.8);margin-left: 50%; transform: translate(-50%, -50%); width: 300px; padding: 5px; text-align: center;" onClick="window.location.reload();">Reload Key Counter </button>
 </div>
-
 <div class="w3-container">
-  <p class="w3-center w3-display-bottommiddle" style="color: aliceblue;">Pat. Pend. - Software Version #371</p>
+  <p class="w3-center w3-display-bottommiddle" style="color: rgb(1, 80, 148);">Pat. Pend. - Software Version #439</p>
 </div>
-
-
 </body>
 
-
 <script>
+let clicks = 0;  
+document.getElementById("clicks").innerHTML = clicks;
+Math.round((clicks += 6)*2); 
 
-    let clicks = 0;  
-    document.getElementById("clicks").innerHTML = clicks;
-
-  
 var myElement = document.getElementById('myElement');
 
-// create a simple instance
-// by default, it only adds horizontal recognizers
 var mc = new Hammer(myElement);
-
-// let the pan gesture support all directions.
-// this will block the vertical scrolling on a touch-device while on the element
 mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-
-// listen to events...
-mc.on("panleft", function(ev) {
-    //myElement.textContent = ev.type +" gesture detected.";
+mc.on("panleft panright panup pandown press", function(ev) {
     console.log(ev.type +" gesture detected.");
     console.log(((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62)*256);
-    clicks += clicks;
-    document.getElementById("clicks").innerHTML = clicks;
     if(clicks >= 500000) {
         document.getElementById("avatar").innerHTML = "Signature Recorded!";
+        document.getElementById("clicks").innerHTML = clicks;
+        clicks += clicks;
+
       }
 });
-mc.on("panright", function(ev) {
-    //myElement.textContent = ev.type +" gesture detected.";
-    console.log(ev.type +" gesture detected.");
-    console.log(((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62)*256);
-    clicks += clicks;
-    document.getElementById("clicks").innerHTML = clicks;
-    if(clicks >= 500000) {
-        document.getElementById("avatar").innerHTML = "Signature Recorded!";
-      }
-  });
-mc.on("panup", function(ev) {
-    //myElement.textContent = ev.type +" gesture detected.";
-    console.log(ev.type +" gesture detected.");
-    console.log(((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62)*256);
-    clicks += clicks;
-    document.getElementById("clicks").innerHTML = clicks;
-    if(clicks >= 500000) {
-        document.getElementById("avatar").innerHTML = "Signature Recorded!";
-      }
-});
-mc.on("pandown", function(ev) {
-    //myElement.textContent = ev.type +" gesture detected.";
-    console.log(ev.type +" gesture detected.");
-    console.log(((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62)*256);
-    clicks += clicks;
-    document.getElementById("clicks").innerHTML = clicks;
-    if(clicks >= 500000) {
-        document.getElementById("avatar").innerHTML = "Signature Recorded!";
-      }
-});
-
-mc.on("press", function(ev) {
-    //myElement.textContent = ev.type +" gesture detected.";
-    console.log(ev.type +" gesture detected.");});
-    Math.round((clicks += 6)*256);
-    if(clicks >= 500000) {
-        document.getElementById("avatar").innerHTML = "Signature Recorded!";
-      }
-
-reset("signature", function() {
-    console.log(ev.type);
-})
-
-
 </script>
-
 </html>

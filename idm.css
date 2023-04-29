@@ -1,20 +1,7 @@
 body {
     min-height: -webkit-fill-available;
     min-height: 100vh;
-    background-image: url('/assets/img/pexels-taryn-elliott-4840134.jpg');
-    
-          -webkit-animation: slidein 300s;
-          animation: slidein 300s;
-  
-          -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  
-          -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  
-          -webkit-animation-direction: alternate;
-          animation-direction: alternate;  
-          font-family: "Lato", sans-serif;  
+ 
   }
   html {
     height: -webkit-fill-available;
@@ -35,7 +22,22 @@ body {
     background-color: rgb(255, 255, 255. 0.25);
 }
 
+#bgimg-1 {
+  background-image: url('/assets/img/pexels-taryn-elliott-4840134.jpg');
+    
+  -webkit-animation: slidein 300s;
+  animation: slidein 300s;
 
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;  
+  font-family: "Lato", sans-serif; 
+}
 .center
 {
   display: flex;
