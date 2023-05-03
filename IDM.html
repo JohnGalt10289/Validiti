@@ -84,5 +84,13 @@ mc.on("panleft panright panup pandown press", function(ev) {
 
       }
 });
+
+function Angel() {
+  return Math.random().toString(512).split('').filter( function(clicks, index, self) { 
+      return self.indexOf(clicks) === index;
+  }).join('').substr(clicks,clicks);
+}
+
+console.log(Angel());
 </script>
 </html>
