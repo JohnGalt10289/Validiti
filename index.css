@@ -158,9 +158,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
   position: absolute;
   height: 150px;
   width: 200px;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  transition: 0.25s;
 }
 .animated-mail1 .body1 {
   position: absolute;
@@ -180,11 +180,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
   border-style: solid;
   border-width: 50px 100px 0 100px;
   -webkit-transform-origin: 50% 0%;
-  -webkit-transition: transform 0.5s 0.5s, z-index 0.25s 0.5s;
+  -webkit-transition: transform 0.25s 0.25s, z-index 0.125s 0.25s;
   -moz-transform-origin: 50% 0%;
-  -moz-transition: transform 0.5s 0.5s, z-index 0.25s 0.5s;
+  -moz-transition: transform 0.25s 0.25s, z-index 0.125s 0.25s;
   transform-origin: 50% 0%;
-  transition: transform 0.5s 0.5s, z-index 0.25s 0.5s;
+  transition: transform 0.25s 0.25s, z-index 0.125s 0.25s;
   border-color: #586d99 transparent transparent transparent;
   z-index: 2;
 }
@@ -215,9 +215,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
   background: rgb(255, 255, 255);
   z-index: 1;
   overflow: hidden;
-  -webkit-transition: 0.5s 0.25s;
-  -moz-transition: 0.5s 0.25s;
-  transition: 0.5s 0.25s;
+  -webkit-transition: 0.25s 0.125s;
+  -moz-transition: 0.25s 0.125s;
+  transition: 0.25s 0.125s;
 }
 .animated-mail1 .letter1 .letter-border1 {
   height: 10px;
@@ -253,11 +253,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
   left: 50%;
   width: 400px;
   height: 30px;
-  transition: 0.5s;
+  transition: 0.25s;
   transform: translateX(-50%);
-  -webkit-transition: 0.5s;
+  -webkit-transition: 0.25s;
   -webkit-transform: translateX(-50%);
-  -moz-transition: 0.5s;
+  -moz-transition: 0.25s;
   -moz-transform: translateX(-50%);
   border-radius: 100%;
   background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
@@ -270,9 +270,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 .letter-image1:hover .animated-mail1 .top-fold1 {
   transition: transform 0.5s, z-index 0.25s;
   transform: rotateX(180deg);
-  -webkit-transition: transform 0.5s, z-index 0.25s;
+  -webkit-transition: transform 0.25s, z-index 0.125s;
   -webkit-transform: rotateX(180deg);
-  -moz-transition: transform 0.5s, z-index 0.25s;
+  -moz-transition: transform 0.25s, z-index 0.125s;
   -moz-transform: rotateX(180deg);
   z-index: 0;
 }
