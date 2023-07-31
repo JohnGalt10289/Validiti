@@ -2,28 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Swipe 42</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link rel="stylesheet" href="IDM.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" media="screen and (orientation: portrait)">
+  <link rel="stylesheet" href="idm.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <script src="https://hammerjs.github.io/dist/hammer.js"></script>
 <script>
 window.onload = function () {
   document.getElementById('id01').style.display='block';
+  var count =0;
+    document.getElementById("clicks").addEventListener("panleft", function(ev) {
+        
+      count++;
+      if(count === 50) {
+        document.getElementById("avatar").innerHTML = clicks;
+      }
+  });
 };
 </script>
-<div class="w3-container">
+  <div class="w3-container">
   <div id="id01" class="w3-modal">
-    <div class="w3-modal-content">
+    <div class="w3-modal-content" style="margin-top: 300px; margin-left: 50%; transform: translate(-50%, -50%); ">
       <div class="w3-container">
-        <p>By continuing you are agreeing to terms of service. Thank you.</p>
+        <p class="w3-center">By continuing you are agreeing to terms of service. Thank you.</p>
+        <div class="w3-center">
         <a href="/tos.html">terms of service</a>
+        </div>
         <br>
         <br>
         <br>
@@ -32,83 +42,55 @@ window.onload = function () {
     </div>
   </div>
 </div>
-
-  <div>
-    <h1>Validiti Securities</h1>
-    <h6>Touch and swipe on the icon below</h6>
-  </div> 
-<div>
-    <img id="myElement" src="/assets/img/CommunityChest/sw42.png" alt="" style="height: 70vw; margin-top: 40px;margin-bottom: 50px;">
-
-</div> 
+<div style="background-color: grey ;">
+  <span class="w3-center"><h1 style="text-shadow: 4px 4px 8px rgb(175, 184, 190); color: aliceblue; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 80px;">Validiti</h1></span>
+</div>
+<body id="myElement">
+<div class="bgimg-1 w3-display-container" id="home" >
+    <span class="w3-center"><img src="/assets/img/validitilogo.png" alt="" style="margin-left: 50%; transform: translate(-50%, -50%); width: 300px; margin-top: 200px"></span>
+</div>
 <div>
   <p id="keys"></p>
 </div>
-<div  style="box-shadow: 10px 10px 5px rgb(255, 255, 255, 0.5); border: 10px; border-radius: 5px; background-color: rgba(197, 197, 197, 0.8);margin-left: 50%; transform: translate(-50%, -50%); width: 250px; margin-top: 10px; padding: 5px; text-align: center;">
-  <p>Potential Random Data Keys Generated</p>
+<div  style="margin-top: 10px; box-shadow: 5px 5px 2px rgb(255, 255, 255, 0.25); border: 5px; border-radius: 5px; background-color: rgba(197, 197, 197, 0.8);margin-left: 50%; transform: translate(-50%, -50%); width: 300px; text-align: center;">
+  <h4 class="w3-opacity"><b>Swipe around and generate keys </b></h4>
+  <p><a id="avatar">Building Signature... </a></p>
   <p><a id="clicks">0</a></p>
-
 </div>
-<button  style="box-shadow: 10px 10px 5px rgb(255, 255, 255, 0.5); border: 5px; border-radius: 5px; background-color: rgba(202, 202, 202, 0.8); width: 150px; padding: 10px; text-align: center;" onClick="window.location.reload();">Reload Key Counter </button>
-
+<div style="margin-top: -20px;">
+  <button  style="box-shadow: .5px 5px 2px rgb(255, 255, 255, 0.25); border: 5px; border-radius: 5px; background-color: rgba(197, 197, 197, 0.8);margin-left: 50%; transform: translate(-50%, -50%); width: 300px; padding: 5px; text-align: center;" onClick="window.location.reload();">Reload Key Counter </button>
+</div>
+<div class="w3-container">
+  <p class="w3-center w3-display-bottommiddle" style="color: rgb(1, 80, 148);">Pat. Pend. - Software Version #439</p>
+</div>
 </body>
-<script>
- var clicks = Math.round(0);  
- var potentialclicks;
- potentialclicks = Math.round(clicks);
-  document.getElementById("clicks").innerHTML = potentialclicks;
 
-  
+<script>
+let clicks = 0;  
+document.getElementById("clicks").innerHTML = clicks;
+Math.round((clicks += 6)*2); 
+
 var myElement = document.getElementById('myElement');
 
-// create a simple instance
-// by default, it only adds horizontal recognizers
 var mc = new Hammer(myElement);
-
-// let the pan gesture support all directions.
-// this will block the vertical scrolling on a touch-device while on the element
 mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+mc.on("panleft panright panup pandown press", function(ev) {
+    console.log(ev.type +" gesture detected.");
+    console.log(((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*62)*256);
+    if(clicks >= 500000) {
+        document.getElementById("avatar").innerHTML = "Signature Recorded!";
+        document.getElementById("clicks").innerHTML = clicks;
+        clicks += clicks;
 
-// listen to events...
-mc.on("panleft", function(ev) {
-    //myElement.textContent = ev.type +" gesture detected.";
-    console.log(ev.type +" gesture detected.");
-    console.log((ev.srcEvent.offsetX - ev.srcEvent.offsetY)*3.14159);
-    clicks += clicks;
-    document.getElementById("clicks").innerHTML = clicks;
+      }
 });
-mc.on("panright", function(ev) {
-    //myElement.textContent = ev.type +" gesture detected.";
-    console.log(ev.type +" gesture detected.");
-    console.log((ev.srcEvent.offsetX + ev.srcEvent.offsetY)*3.14159);
-    clicks += clicks;
-    document.getElementById("clicks").innerHTML = clicks;
-  });
-mc.on("panup", function(ev) {
-    //myElement.textContent = ev.type +" gesture detected.";
-    console.log(ev.type +" gesture detected.");
-    console.log((ev.srcEvent.offsetX * ev.srcEvent.offsetY)*3.14159);
-    clicks += clicks;
-    document.getElementById("clicks").innerHTML = clicks;
-});
-mc.on("pandown", function(ev) {
-    //myElement.textContent = ev.type +" gesture detected.";
-    console.log(ev.type +" gesture detected.");
-    console.log((ev.srcEvent.offsetX / ev.srcEvent.offsetY)*3.14159);
-    clicks += clicks;
-    document.getElementById("clicks").innerHTML = clicks;
-});
-mc.on("tap", function(ev) {
-    //myElement.textContent = ev.type +" gesture detected.";
-    console.log(ev.type +" gesture detected.");
-    console.log((ev.srcEvent.offsetX = ev.srcEvent.offsetY)*3.14159);
-    clicks += clicks;
-    document.getElementById("clicks").innerHTML = clicks;
-});
-mc.on("press", function(ev) {
-    //myElement.textContent = ev.type +" gesture detected.";
-    console.log(ev.type +" gesture detected.");});
-    Math.round(clicks += .314159);
+
+function Angel() {
+  return Math.random().toString(512).split('').filter( function(clicks, index, self) { 
+      return self.indexOf(clicks) === index;
+  }).join('').substr(clicks,clicks);
+}
+
+console.log(Angel());
 </script>
-
 </html>

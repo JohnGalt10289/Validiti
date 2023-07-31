@@ -1,0 +1,6 @@
+Sun Jun 11 12:40:59 2023 [1;31mfile://C:/Users/bsmith/gslang_editor/initialize.gs(28): error C-603: 'add_values' is not a member function.
+[2;37;0m
+Sun Jun 11 12:40:59 2023 Error occurs when booting...
+Sun Jun 11 12:40:59 2023 [1;31mError(-1): Compile file://C:/Users/bsmith/gslang_editor/initialize.gs failed.[2;37;0m
+Coroutine: co[13:v1]boot
+At <Internal routine>
